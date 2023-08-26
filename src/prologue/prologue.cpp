@@ -1,5 +1,4 @@
 #include "prologue/prologue.h"
-#include "Core/Platform.h"
 
 #include <iostream>
 

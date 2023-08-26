@@ -12,7 +12,7 @@
 #include <map>
 #include <unordered_map>
 
-namespace Prologue
+namespace prologue
 {
     template<typename _Ty>
     class Allocator : public std::allocator<_Ty>
@@ -115,4 +115,4 @@ namespace Prologue
     template<typename _Kty, typename _Ty, typename _Hasher = Hash<_Kty>, typename _Keyeq = EqualTo<_Kty>, typename _Alloc = Allocator<Pair<const _Kty, _Ty>>>
     using UnorderedMultiMap = std::unordered_multimap<_Kty, _Ty, _Hasher, _Keyeq, _Alloc>;
 
-} // namespace Prologue
+} // namespace prologue

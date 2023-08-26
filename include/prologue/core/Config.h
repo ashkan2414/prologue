@@ -36,4 +36,5 @@
     #define PROLOGUE_CPP_VER 0
 #endif
 
+#define PROLOGUE_NO_VTABLE __declspec(novtable)
 
