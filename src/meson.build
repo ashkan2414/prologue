@@ -2,8 +2,30 @@
 # Distributed under the MIT License (http://opensource.org/licenses/MIT)
 
 ROOT_DIR = meson.source_root()
+SRC_DIR = meson.current_source_dir()
 
-prologue_lib = library('Prologue', 'prologue/prologue.cpp',
+sources = []
+
+prologue_main_dir = SRC_DIR / 'prologue'
+prologue_main_sources = [
+    'prologue.cpp',
+]
+
+foreach source : prologue_main_sources
+    sources += [prologue_main_dir / source]
+endforeach
+
+prologue_core_dir = prologue_main_dir / 'core'
+prologue_core_sources = [
+    'Windows/OSAdapterWindows.cpp',
+    'Linux/OSAdapterLinux.cpp'
+]
+
+foreach source : prologue_core_sources
+    sources += [prologue_core_dir / source]
+endforeach
+
+prologue_lib = library('Prologue', sources,
                        include_directories: include_dir,
                        install_dir : ROOT_DIR / 'bin',
                        install : true)
