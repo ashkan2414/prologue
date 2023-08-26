@@ -1,0 +1,20 @@
+{
+  "tasks": [
+    {
+      "type": "meson",
+      "mode": "build",
+      "problemMatcher": ["$meson-gcc"],
+      "group": "build",
+      "label": "Meson Build All",
+      "target": "all"
+    },
+    {
+      "type": "meson",
+      "target": "examples/HelloWorld/HelloWorld:executable",
+      "mode": "build",
+      "problemMatcher": ["$meson-gcc"],
+      "group": "build",
+      "label": "Meson: Build examples/HelloWorld/HelloWorld:executable"
+    }
+  ]
+}
